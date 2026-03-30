@@ -1,0 +1,59 @@
+/* Tokens e base global — UFC Manager */
+
+:root {
+  --bg-deep: #07090d;
+  --bg-elevated: #0f141c;
+  --bg-card: #141c28;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e8eaed;
+  --text-muted: #9aa0a6;
+  --accent: #d20a0a;
+  --accent-soft: rgba(210, 10, 10, 0.15);
+  --gold: #c9a227;
+  --font-display: "Bebas Neue", Impact, sans-serif;
+  --font-body: "Source Sans 3", system-ui, sans-serif;
+  --radius: 12px;
+  --shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg-deep);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

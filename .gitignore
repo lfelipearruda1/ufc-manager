@@ -1,0 +1,16 @@
+# Root
+.DS_Store
+
+# Java / Maven (server)
+server/target/
+server/.idea/
+server/*.iml
+server/.classpath
+server/.project
+server/.settings/
+
+# Node (client)
+client/node_modules/
+client/dist/
+client/.env
+client/.env.local
