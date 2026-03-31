@@ -48,3 +48,9 @@ Instruções mais detalhadas sobre o **DDL**, Flyway e execução manual do SQL 
 ---
 
 *UFC Manager — projeto acadêmico (banco de dados, API e front-end).*
+
+## Membros
+- [Luca Ribeiro Albuquerque](https://github.com/LucaAlbuquerque)
+- [Luiz Felipe Arruda](https://github.com/lfelipearruda1)
+- [João Cláudio Beltrão]()
+- [Gabriel Belo]()
