@@ -6,17 +6,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "divisao")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Divisao {
 
     @Id
@@ -32,4 +24,38 @@ public class Divisao {
 
     @Column(name = "peso_min", nullable = false)
     private Double pesoMin;
+
+    public Divisao() {}
+
+    public Long getIdDivisao() {
+        return idDivisao;
+    }
+
+    public void setIdDivisao(Long idDivisao) {
+        this.idDivisao = idDivisao;
+    }
+
+    public String getNomeDivisao() {
+        return nomeDivisao;
+    }
+
+    public void setNomeDivisao(String nomeDivisao) {
+        this.nomeDivisao = nomeDivisao;
+    }
+
+    public Double getPesoMax() {
+        return pesoMax;
+    }
+
+    public void setPesoMax(Double pesoMax) {
+        this.pesoMax = pesoMax;
+    }
+
+    public Double getPesoMin() {
+        return pesoMin;
+    }
+
+    public void setPesoMin(Double pesoMin) {
+        this.pesoMin = pesoMin;
+    }
 }

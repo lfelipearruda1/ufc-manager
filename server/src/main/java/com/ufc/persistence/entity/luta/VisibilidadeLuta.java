@@ -6,17 +6,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "visibilidade_luta")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class VisibilidadeLuta {
 
     @Id
@@ -26,4 +18,22 @@ public class VisibilidadeLuta {
 
     @Column(nullable = false, length = 100)
     private String visibilidade;
+
+    public VisibilidadeLuta() {}
+
+    public Long getIdVisibilidade() {
+        return idVisibilidade;
+    }
+
+    public void setIdVisibilidade(Long idVisibilidade) {
+        this.idVisibilidade = idVisibilidade;
+    }
+
+    public String getVisibilidade() {
+        return visibilidade;
+    }
+
+    public void setVisibilidade(String visibilidade) {
+        this.visibilidade = visibilidade;
+    }
 }

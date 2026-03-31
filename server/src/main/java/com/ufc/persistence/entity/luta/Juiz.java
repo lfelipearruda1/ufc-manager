@@ -6,17 +6,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "juiz")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Juiz {
 
     @Id
@@ -26,4 +18,22 @@ public class Juiz {
 
     @Column(name = "nome_juiz", nullable = false, length = 100)
     private String nomeJuiz;
+
+    public Juiz() {}
+
+    public Long getIdJuiz() {
+        return idJuiz;
+    }
+
+    public void setIdJuiz(Long idJuiz) {
+        this.idJuiz = idJuiz;
+    }
+
+    public String getNomeJuiz() {
+        return nomeJuiz;
+    }
+
+    public void setNomeJuiz(String nomeJuiz) {
+        this.nomeJuiz = nomeJuiz;
+    }
 }

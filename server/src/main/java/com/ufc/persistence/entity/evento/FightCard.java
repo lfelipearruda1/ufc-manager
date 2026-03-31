@@ -29,7 +29,7 @@ public class FightCard {
     @Column(name = "quant_lutas", nullable = false)
     private Integer quantLutas;
 
-    protected FightCard() {}
+    public FightCard() {}
 
     public Long getIdCard() {
         return idCard;

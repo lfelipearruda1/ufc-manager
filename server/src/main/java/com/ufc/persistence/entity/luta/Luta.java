@@ -12,17 +12,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "luta")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Luta {
 
     @Id
@@ -57,4 +49,78 @@ public class Luta {
 
     @OneToOne(mappedBy = "luta", fetch = FetchType.LAZY)
     private Possui possui;
+
+    public Luta() {}
+
+    public Long getIdLuta() {
+        return idLuta;
+    }
+
+    public void setIdLuta(Long idLuta) {
+        this.idLuta = idLuta;
+    }
+
+    public String getMetodo() {
+        return metodo;
+    }
+
+    public void setMetodo(String metodo) {
+        this.metodo = metodo;
+    }
+
+    public String getResultado() {
+        return resultado;
+    }
+
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
+    }
+
+    public Integer getQuantRounds() {
+        return quantRounds;
+    }
+
+    public void setQuantRounds(Integer quantRounds) {
+        this.quantRounds = quantRounds;
+    }
+
+    public FightCard getCard() {
+        return card;
+    }
+
+    public void setCard(FightCard card) {
+        this.card = card;
+    }
+
+    public CardPpv getCardPpv() {
+        return cardPpv;
+    }
+
+    public void setCardPpv(CardPpv cardPpv) {
+        this.cardPpv = cardPpv;
+    }
+
+    public VisibilidadeLuta getVisibilidade() {
+        return visibilidade;
+    }
+
+    public void setVisibilidade(VisibilidadeLuta visibilidade) {
+        this.visibilidade = visibilidade;
+    }
+
+    public Juiz getJuiz() {
+        return juiz;
+    }
+
+    public void setJuiz(Juiz juiz) {
+        this.juiz = juiz;
+    }
+
+    public Possui getPossui() {
+        return possui;
+    }
+
+    public void setPossui(Possui possui) {
+        this.possui = possui;
+    }
 }

@@ -1,27 +1,43 @@
-# Banco de dados (DDL em SQL)
+# Banco de dados e migrações
 
-Toda **criação de tabelas, colunas, FKs e constraints** fica aqui em SQL. O Java **não** gera schema: o [Flyway](https://flywaydb.org/) aplica estes scripts na subida da API; o JPA só **valida** (`ddl-auto=validate`) que as entidades batem com o que já existe.
+Este diretório concentra o **modelo relacional** do UFC Manager: divisões, lutadores, eventos, lutas no card, juízes, cinturões e demais vínculos descritos no trabalho de banco de dados.
 
-## Onde está o SQL
+## Papel no projeto
 
-| Caminho | Uso |
-|---------|-----|
-| [`migrations/V1__schema.sql`](migrations/V1__schema.sql) | Script versionado (novas versões: `V2__....sql`, etc.). |
+- O **esquema** (tabelas, chaves, restrições, índices) é definido **só em SQL**, em arquivos numerados e aplicados em ordem.
+- **Não há dados de exemplo** dentro das migrações — apenas estrutura. Quem usa o sistema preenche o banco via ferramentas cliente, scripts próprios ou pelos fluxos que a API expuser.
+- Ao subir a aplicação, o **Flyway** aplica automaticamente o que falta em `migrations/`. Em ambiente de desenvolvimento com outro banco (por exemplo H2 nos testes), a mesma sequência de scripts garante que todos vejam o mesmo modelo.
 
-Cópia em tempo de build: o Maven copia `database/migrations/*.sql` para o classpath em `db/migration/`, onde o Flyway procura.
+## Onde estão os arquivos
 
-## Como rodar o SQL manualmente (Postico, pgAdmin, `psql`)
+Os scripts ficam em **`migrations/`**, na ordem **V1 → V13** (cada versão é um passo; não reescreva versões antigas já aplicadas em produção). Novas mudanças de modelo devem vir como **V14, V15…** com um nome descritivo.
 
-1. Conecte no banco (ex.: `ufc_manager` no PostgreSQL local).
-2. Abra o arquivo `migrations/V1__schema.sql` **neste repositório** (é o mesmo conteúdo que o Flyway usa).
-3. Execute o script inteiro **uma vez** em um banco vazio (ou apague as tabelas antes, se for recomeçar).
+Um resumo do que cada arquivo cobre:
 
-**Atenção:** se a API já rodou com Flyway, o histórico fica em `flyway_schema_history`. Para só “ver” o SQL na disciplina, use uma base de teste ou um banco novo — evite duplicar migrações na mesma base em que o Flyway já aplicou `V1`.
+| Arquivo | Conteúdo principal |
+|---------|---------------------|
+| `V1__divisao.sql` | Divisões de peso |
+| `V2__lutador.sql` | Lutadores |
+| `V3__lutador_lutador.sql` | Relação entre lutadores |
+| `V4__treinador.sql` | Treinadores |
+| `V5__cinturao.sql` | Cinturões |
+| `V6__card.sql` | Fight Night (`card`) |
+| `V7__card_ppv.sql` | PPV |
+| `V8__card_ppv_cinturao.sql` | Cinturões disputados em PPV |
+| `V9__juiz.sql` | Juízes |
+| `V10__visibilidade_luta.sql` | Visibilidade da luta no card |
+| `V11__luta.sql` | Lutas (ligadas a um tipo de evento) |
+| `V12__possui.sql` | Desafiante / desafiado / cinturão por luta |
+| `V13__indices.sql` | Índices auxiliares |
 
-## Relação com o código Java
+## Rodar o SQL à mão (pgAdmin, Postico, `psql`…)
 
-- **`com.ufc.persistence.entity.*`** — classes JPA que **espelham** as tabelas definidas neste SQL.
-- **`com.ufc.persistence`** — repositórios Spring Data (consultas).
-- **`com.ufc.module.*`** — regras de negócio / casos de uso (ex.: `module.home` para o resumo da página inicial).
+Num **banco vazio**, execute os arquivos **na ordem V1…V13**. Se a API já tiver rodado o Flyway nesse banco, o histórico fica na tabela `flyway_schema_history` — não reaplique tudo em cima sem saber o que já foi aplicado.
 
-Alterou tabela ou coluna? **Altere o SQL** (nova migração `V2__...sql`) e depois ajuste as entidades Java para coincidir.
+Se aparecer erro de **versão duplicada** ao compilar ou subir a API, costuma ser lixo de build antigo: limpe a pasta de saída do Maven (`mvn clean`) e tente de novo.
+
+## Alterações futuras no modelo
+
+Sempre que precisar mudar tabelas ou colunas, **acrescente uma nova migração** (próximo número V…) em vez de editar scripts já usados em ambientes reais. Depois, alinhe a aplicação para usar o novo esquema.
+
+Para o quadro geral do produto e como subir API + site, veja o **`README.md` na raiz do repositório**.

@@ -41,7 +41,7 @@ public class CardPpv {
     @Column(name = "quant_lutas", nullable = false)
     private Integer quantLutas;
 
-    protected CardPpv() {}
+    public CardPpv() {}
 
     public Long getIdCardPpv() {
         return idCardPpv;

@@ -10,17 +10,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "lutador")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Lutador {
 
     @Id
@@ -46,4 +38,62 @@ public class Lutador {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_divisao", nullable = false)
     private Divisao divisao;
+
+    public Lutador() {}
+
+    public Long getIdLutador() {
+        return idLutador;
+    }
+
+    public void setIdLutador(Long idLutador) {
+        this.idLutador = idLutador;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(Double peso) {
+        this.peso = peso;
+    }
+
+    public String getApelido() {
+        return apelido;
+    }
+
+    public void setApelido(String apelido) {
+        this.apelido = apelido;
+    }
+
+    public String getCartel() {
+        return cartel;
+    }
+
+    public void setCartel(String cartel) {
+        this.cartel = cartel;
+    }
+
+    public String getNacionalidade() {
+        return nacionalidade;
+    }
+
+    public void setNacionalidade(String nacionalidade) {
+        this.nacionalidade = nacionalidade;
+    }
+
+    public Divisao getDivisao() {
+        return divisao;
+    }
+
+    public void setDivisao(Divisao divisao) {
+        this.divisao = divisao;
+    }
 }

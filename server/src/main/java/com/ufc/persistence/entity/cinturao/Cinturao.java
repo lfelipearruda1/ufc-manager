@@ -11,17 +11,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "cinturao")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Cinturao {
 
     @Id
@@ -39,4 +31,38 @@ public class Cinturao {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_divisao", nullable = false)
     private Divisao divisao;
+
+    public Cinturao() {}
+
+    public Long getIdCinturao() {
+        return idCinturao;
+    }
+
+    public void setIdCinturao(Long idCinturao) {
+        this.idCinturao = idCinturao;
+    }
+
+    public String getTipoCinturao() {
+        return tipoCinturao;
+    }
+
+    public void setTipoCinturao(String tipoCinturao) {
+        this.tipoCinturao = tipoCinturao;
+    }
+
+    public Lutador getLutador() {
+        return lutador;
+    }
+
+    public void setLutador(Lutador lutador) {
+        this.lutador = lutador;
+    }
+
+    public Divisao getDivisao() {
+        return divisao;
+    }
+
+    public void setDivisao(Divisao divisao) {
+        this.divisao = divisao;
+    }
 }

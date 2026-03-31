@@ -10,17 +10,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "possui")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Possui {
 
     @Id
@@ -42,4 +34,46 @@ public class Possui {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_cinturao")
     private Cinturao cinturao;
+
+    public Possui() {}
+
+    public Long getIdLuta() {
+        return idLuta;
+    }
+
+    public void setIdLuta(Long idLuta) {
+        this.idLuta = idLuta;
+    }
+
+    public Luta getLuta() {
+        return luta;
+    }
+
+    public void setLuta(Luta luta) {
+        this.luta = luta;
+    }
+
+    public Lutador getDesafiante() {
+        return desafiante;
+    }
+
+    public void setDesafiante(Lutador desafiante) {
+        this.desafiante = desafiante;
+    }
+
+    public Lutador getDesafiado() {
+        return desafiado;
+    }
+
+    public void setDesafiado(Lutador desafiado) {
+        this.desafiado = desafiado;
+    }
+
+    public Cinturao getCinturao() {
+        return cinturao;
+    }
+
+    public void setCinturao(Cinturao cinturao) {
+        this.cinturao = cinturao;
+    }
 }
