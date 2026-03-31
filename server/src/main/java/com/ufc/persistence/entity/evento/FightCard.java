@@ -15,7 +15,7 @@ public class FightCard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_card")
-    private Long idCard;
+    private Integer idCard;
 
     @Column(nullable = false, length = 100)
     private String cidade;
@@ -31,11 +31,11 @@ public class FightCard {
 
     public FightCard() {}
 
-    public Long getIdCard() {
+    public Integer getIdCard() {
         return idCard;
     }
 
-    public void setIdCard(Long idCard) {
+    public void setIdCard(Integer idCard) {
         this.idCard = idCard;
     }
 

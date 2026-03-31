@@ -1,0 +1,202 @@
+--  Projeto BD - Sistema de Gestão do UFC (UFC Manager)
+--  Membros: Luca Ribeiro Albuquerque, Luiz Felipe Arruda, João Cláudio, Gabriel Belo
+
+--  INSERÇÃO DOS DADOS
+
+--  DIVISÕES DE PESO
+
+INSERT INTO Divisao VALUES (1, 'Peso Mosca',       56.70, 52.17);
+INSERT INTO Divisao VALUES (2, 'Peso Galo',         61.24, 56.71);
+INSERT INTO Divisao VALUES (3, 'Peso Pena',         65.77, 61.25);
+INSERT INTO Divisao VALUES (4, 'Peso Leve',         70.31, 65.78);
+INSERT INTO Divisao VALUES (5, 'Peso Meio-Médio',   77.11, 70.32);
+INSERT INTO Divisao VALUES (6, 'Peso Médio',        83.91, 77.12);
+INSERT INTO Divisao VALUES (7, 'Peso Meio-Pesado',  92.99, 83.92);
+INSERT INTO Divisao VALUES (8, 'Peso Pesado',      120.20, 93.00);
+
+--  LUTADORES
+
+-- Pesos Pesados
+INSERT INTO lutador VALUES (1,  'Drago',              'Alexander Volkov',      107.50, '39-11-0', 'Rússia',           8);
+INSERT INTO lutador VALUES (2,  'Sergei Pavlovich',   'Sergei Pavlovich',      120.20, '20-3-0',  'Rússia',           8);
+INSERT INTO lutador VALUES (3,  'Poatan',             'Alex Pereira',          102.06, '13-3-0',  'Brasil',           8);
+INSERT INTO lutador VALUES (4,  'Aspinall',           'Tom Aspinall',          108.86, '15-3-0',  'Inglaterra',       8);
+INSERT INTO lutador VALUES (5,  'Bon Gamin',          'Ciryl Gane',            104.33, '13-2-0',  'França',           8);
+
+-- Pesos Meio-Pesados
+INSERT INTO lutador VALUES (6,  'Magomed Ankalaev',   'Magomed Ankalaev',       92.99, '21-2-1',  'Rússia',           7);
+INSERT INTO lutador VALUES (7,  'Black Jag',          'Carlos Ulberg',          92.99, '14-1-0',  'Austrália',        7);
+INSERT INTO lutador VALUES (8,  'Jiri Prochazka',     'Jiri Prochazka',         92.99, '32-5-1',  'República Tcheca', 7);
+
+-- Pesos Médios
+INSERT INTO lutador VALUES (9,  'Borz',               'Khamzat Chimaev',        83.91, '15-0-0',  'Rússia',           6);
+INSERT INTO lutador VALUES (10, 'Stillknocks',        'Dricus Du Plessis',      83.91, '23-3-0',  'África do Sul',    6);
+INSERT INTO lutador VALUES (11, 'The Sniper',         'Nassourdine Imavov',     83.91, '17-4-0',  'França',           6);
+INSERT INTO lutador VALUES (12, 'Sean Strickland',    'Sean Strickland',        83.91, '30-7-0',  'EUA',              6);
+
+-- Pesos Meio-Médios
+INSERT INTO lutador VALUES (13, 'Islam Makhachev',    'Islam Makhachev',        77.11, '28-1-0',  'Rússia',           5);
+INSERT INTO lutador VALUES (14, 'Jack Della Maddalena','Jack Della Maddalena',  77.11, '18-3-0',  'Austrália',        5);
+INSERT INTO lutador VALUES (15, 'The Future',         'Ian Machado Garry',      77.11, '17-1-0',  'Irlanda',          5);
+INSERT INTO lutador VALUES (16, 'The Nightmare',      'Carlos Prates',          77.11, '23-7-0',  'Brasil',           5);
+
+-- Pesos Leves
+INSERT INTO lutador VALUES (17, 'El Matador',         'Ilia Topuria',           70.31, '17-0-0',  'Espanha',          4);
+INSERT INTO lutador VALUES (18, 'The Highlight',      'Justin Gaethje',         70.31, '27-5-0',  'EUA',              4);
+INSERT INTO lutador VALUES (19, 'Blessed',            'Max Holloway',           70.31, '27-9-0',  'EUA',              4);
+INSERT INTO lutador VALUES (20, 'Do Bronx',           'Charles Oliveira',       70.31, '37-11-0', 'Brasil',           4);
+INSERT INTO lutador VALUES (21, 'The Baddy',          'Paddy Pimblett',         70.31, '23-4-0',  'Inglaterra',       4);
+INSERT INTO lutador VALUES (32, 'Money',              'Renato Moicano',         70.31, '20-7-1',  'Brasil',           4);
+
+-- Pesos Pena
+INSERT INTO lutador VALUES (22, 'Diego Lopes',        'Diego Lopes',            65.77, '27-8-0',  'Brasil',           3);
+INSERT INTO lutador VALUES (23, 'The Great',          'Alexander Volkanovski',  65.77, '28-4-0',  'Austrália',        3);
+INSERT INTO lutador VALUES (24, 'Movsar Evloev',      'Movsar Evloev',          65.77, '20-0-0',  'Rússia',           3);
+
+-- Pesos Galo
+INSERT INTO lutador VALUES (25, 'Umar Nurmagomedov',  'Umar Nurmagomedov',      61.24, '20-1-0',  'Rússia',           2);
+INSERT INTO lutador VALUES (26, 'No Mercy',           'Petr Yan',               61.24, '20-5-0',  'Rússia',           2);
+INSERT INTO lutador VALUES (27, 'Suga',               'Sean OMalley',           61.24, '19-3-0',  'EUA',              2);
+INSERT INTO lutador VALUES (28, 'The Machine',        'Merab Dvalishvili',      61.24, '21-5-0',  'Geórgia',          2);
+
+-- Pesos Mosca
+INSERT INTO lutador VALUES (29, 'The Fearless',       'Joshua Van',             56.70, '16-2-0',  'Myanmar',          1);
+INSERT INTO lutador VALUES (30, 'The Cannibal',       'Alexandre Pantoja',      56.70, '30-6-0',  'Brasil',           1);
+INSERT INTO lutador VALUES (31, 'StarBoy',            'Manel Kape',             56.70, '22-7-0',  'Angola',           1);
+
+--  TREINADORES
+
+INSERT INTO Treinador VALUES (1,  'Eric Nicksick',          'Wrestling', 19);
+INSERT INTO Treinador VALUES (2,  'Javier Mendez',          'Grappling', 17);
+INSERT INTO Treinador VALUES (3,  'John Kavanagh',          'Striking',  18);
+INSERT INTO Treinador VALUES (4,  'Plinio Cruz',            'Striking',   3);
+INSERT INTO Treinador VALUES (5,  'Glover Teixeira',        'Grappling',  3);
+INSERT INTO Treinador VALUES (6,  'Joao Marcelo',           'Grappling', 20);
+INSERT INTO Treinador VALUES (7,  'Din Thomas',             'Striking',  22);
+INSERT INTO Treinador VALUES (8,  'Andrew Weber',           'Wrestling', 23);
+INSERT INTO Treinador VALUES (9,  'Trevor Wittman',         'Striking',  21);
+INSERT INTO Treinador VALUES (10, 'Rafael Cordeiro',        'Striking',  32);
+INSERT INTO Treinador VALUES (11, 'Diego Lima',             'Grappling', 30);
+INSERT INTO Treinador VALUES (12, 'Khabib Nurmagomedov',    'Grappling', 19);
+INSERT INTO Treinador VALUES (13, 'Henry Cejudo',           'Wrestling', 27);
+
+--  CINTURÕES
+
+-- Cinturões detidos
+INSERT INTO cinturao VALUES (1,  'Regular',  29, 1);
+INSERT INTO cinturao VALUES (2,  'Regular',  26, 2);
+INSERT INTO cinturao VALUES (3,  'Regular',  23, 3);
+INSERT INTO cinturao VALUES (4,  'Regular',  17, 4);
+INSERT INTO cinturao VALUES (5,  'Regular',  13, 5);
+INSERT INTO cinturao VALUES (6,  'Regular',   9, 6);
+INSERT INTO cinturao VALUES (8,  'Regular',   4, 8);
+INSERT INTO cinturao VALUES (10, 'BMF',      20, 4);
+INSERT INTO cinturao VALUES (11, 'Interino', 18, 4);
+
+-- Cinturões vagos
+INSERT INTO cinturao VALUES (7,  'Regular',  NULL, 7);
+INSERT INTO cinturao VALUES (12, 'Interino', NULL, 3);
+INSERT INTO cinturao VALUES (13, 'Interino', NULL, 2);
+INSERT INTO cinturao VALUES (14, 'Interino', NULL, 1);
+INSERT INTO cinturao VALUES (15, 'Interino', NULL, 6);
+
+--  VISIBILIDADE DAS LUTAS
+
+INSERT INTO VisibilidadeLuta VALUES (1, 'Preliminar');
+INSERT INTO VisibilidadeLuta VALUES (2, 'Co-main');
+INSERT INTO VisibilidadeLuta VALUES (3, 'Main');
+
+--  CARDS (EVENTOS)
+
+INSERT INTO card VALUES (1,  'Las Vegas',      '07/02/2026', 'EUA',              12);
+INSERT INTO card VALUES (2,  'Las Vegas',      '06/12/2026', 'EUA',              11);
+INSERT INTO card VALUES (3,  'Califórnia',     '19/01/2025', 'EUA',              12);
+INSERT INTO card VALUES (4,  'Abu Dhabi',      '22/10/2022', 'Emirados Árabes',  12);
+INSERT INTO card VALUES (5,  'Sydney',         '31/01/2026', 'Austrália',        13);
+INSERT INTO card VALUES (6,  'Las Vegas',      '24/01/2026', 'EUA',              13);
+INSERT INTO card VALUES (7,  'Nova York',      '16/11/2025', 'EUA',              13);
+INSERT INTO card VALUES (8,  'Las Vegas',      '28/06/2025', 'EUA',              12);
+INSERT INTO card VALUES (9,  'Califórnia',     '18/02/2024', 'EUA',              12);
+INSERT INTO card VALUES (10, 'Las Vegas',      '04/10/2025', 'EUA',              13);
+INSERT INTO card VALUES (11, 'Chicago',        '16/08/2025', 'EUA',              11);
+INSERT INTO card VALUES (12, 'Phoenix',        '07/05/2022', 'EUA',              13);
+INSERT INTO card VALUES (13, 'Sydney',         '09/02/2025', 'Austrália',        14);
+INSERT INTO card VALUES (14, 'Las Vegas',      '14/01/2023', 'EUA',              13);
+INSERT INTO card VALUES (15, 'Kansas',         '26/04/2025', 'EUA',              13);
+INSERT INTO card VALUES (16, 'Las Vegas',      '13/04/2024', 'EUA',              11);
+INSERT INTO card VALUES (17, 'Abu Dhabi',      '26/10/2024', 'Emirados Árabes',  12);
+INSERT INTO card VALUES (18, 'Perth',          '12/02/2023', 'Austrália',        12);
+INSERT INTO card VALUES (19, 'Califórnia',     '18/01/2025', 'EUA',              13);
+INSERT INTO card VALUES (20, 'Abu Dhabi',      '21/10/2023', 'Emirados Árabes',  14);
+INSERT INTO card VALUES (21, 'Las Vegas',      '08/03/2025', 'EUA',              13);
+INSERT INTO card VALUES (22, 'New Jersey',     '01/06/2024', 'EUA',              11);
+INSERT INTO card VALUES (23, 'Abu Dhabi',      '22/10/2022', 'Emirados Árabes',  13);
+INSERT INTO card VALUES (24, 'Toronto',        '20/01/2024', 'Canadá',           13);
+INSERT INTO card VALUES (25, 'Nova York',      '11/11/2023', 'EUA',              13);
+INSERT INTO card VALUES (26, 'Las Vegas',      '14/09/2024', 'EUA',              12);
+INSERT INTO card VALUES (27, 'New Jersey',     '07/06/2025', 'EUA',              13);
+INSERT INTO card VALUES (28, 'Las Vegas',      '07/12/2024', 'EUA',              14);
+INSERT INTO card VALUES (29, 'Rio de Janeiro', '11/10/2025', 'Brasil',           14);
+INSERT INTO card VALUES (30, 'Londres',        '21/03/2026', 'Inglaterra',       13);
+
+--  CARDS PPV
+
+INSERT INTO card_ppv VALUES (1,  326, 79.99, 559230000.00, 6991500, 'Las Vegas',    '07/02/2026', 'EUA',             12, 4);
+INSERT INTO card_ppv VALUES (2,  323, 79.99, 399900000.00, 4999500, 'Las Vegas',    '06/12/2026', 'EUA',             11, 3);
+INSERT INTO card_ppv VALUES (3,  311, 79.99, 239970000.00, 2999700, 'Califórnia',   '19/01/2025', 'EUA',             12, 6);
+INSERT INTO card_ppv VALUES (4,  280, 79.99, 479940000.00, 5999700, 'Abu Dhabi',    '22/10/2022', 'Emirados Árabes', 12, 3);
+INSERT INTO card_ppv VALUES (5,  325, 79.99, 479940000.00, 5999700, 'Sydney',       '31/01/2026', 'Austrália',       13, 3);
+INSERT INTO card_ppv VALUES (6,  324, 79.99, 479940000.00, 5999700, 'Las Vegas',    '24/01/2026', 'EUA',             13, 3);
+INSERT INTO card_ppv VALUES (7,  322, 79.99, 479940000.00, 5999700, 'Nova York',    '16/11/2025', 'EUA',             13, 3);
+INSERT INTO card_ppv VALUES (8,  317, 79.99, 479940000.00, 5999700, 'Las Vegas',    '28/06/2025', 'EUA',             12, 3);
+INSERT INTO card_ppv VALUES (9,  298, 79.99, 479940000.00, 5999700, 'Califórnia',   '18/02/2024', 'EUA',             12, 3);
+INSERT INTO card_ppv VALUES (10, 320, 79.99, 479940000.00, 5999700, 'Las Vegas',    '04/10/2025', 'EUA',             13, 3);
+INSERT INTO card_ppv VALUES (11, 319, 79.99, 479940000.00, 5999700, 'Chicago',      '16/08/2025', 'EUA',             11, 3);
+INSERT INTO card_ppv VALUES (12, 274, 79.99, 479940000.00, 5999700, 'Phoenix',      '07/05/2022', 'EUA',             13, 3);
+INSERT INTO card_ppv VALUES (13, 312, 79.99, 479940000.00, 5999700, 'Sydney',       '09/02/2025', 'Austrália',       14, 3);
+INSERT INTO card_ppv VALUES (16, 300, 79.99, 479940000.00, 5999700, 'Las Vegas',    '13/04/2024', 'EUA',             11, 3);
+INSERT INTO card_ppv VALUES (17, 308, 79.99, 479940000.00, 5999700, 'Abu Dhabi',    '26/10/2024', 'Emirados Árabes', 12, 3);
+INSERT INTO card_ppv VALUES (18, 284, 79.99, 479940000.00, 5999700, 'Perth',        '12/02/2023', 'Austrália',       12, 3);
+INSERT INTO card_ppv VALUES (19, 311, 79.99, 479940000.00, 5999700, 'Califórnia',   '18/01/2025', 'EUA',             13, 3);
+INSERT INTO card_ppv VALUES (20, 294, 79.99, 479940000.00, 5999700, 'Abu Dhabi',    '21/10/2023', 'Emirados Árabes', 14, 3);
+INSERT INTO card_ppv VALUES (21, 313, 79.99, 479940000.00, 5999700, 'Las Vegas',    '08/03/2025', 'EUA',             13, 3);
+INSERT INTO card_ppv VALUES (22, 302, 79.99, 479940000.00, 5999700, 'New Jersey',   '01/06/2024', 'EUA',             11, 3);
+INSERT INTO card_ppv VALUES (23, 280, 79.99, 479940000.00, 5999700, 'Abu Dhabi',    '22/10/2022', 'Emirados Árabes', 13, 3);
+INSERT INTO card_ppv VALUES (24, 297, 79.99, 479940000.00, 5999700, 'Toronto',      '20/01/2024', 'Canadá',          13, 3);
+INSERT INTO card_ppv VALUES (25, 295, 79.99, 479940000.00, 5999700, 'Nova York',    '11/11/2023', 'EUA',             13, 3);
+INSERT INTO card_ppv VALUES (26, 306, 79.99, 479940000.00, 5999700, 'Las Vegas',    '14/09/2024', 'EUA',             12, 3);
+INSERT INTO card_ppv VALUES (27, 316, 79.99, 479940000.00, 5999700, 'New Jersey',   '07/06/2025', 'EUA',             13, 3);
+INSERT INTO card_ppv VALUES (28, 310, 79.99, 479940000.00, 5999700, 'Las Vegas',    '07/12/2024', 'EUA',             14, 3);
+
+--  LUTAS
+
+INSERT INTO Luta VALUES (1,  'Decisão Unânime',  'Charles Vence',            5, 20, 19,  1, 3, NULL);
+INSERT INTO Luta VALUES (2,  'Decisão Unânime',  'Petr Vence',               5, 26, 28,  2, 3, NULL);
+INSERT INTO Luta VALUES (3,  'Decisão Unânime',  'Merab Vence',              5, 25, 28,  3, 2, NULL);
+INSERT INTO Luta VALUES (4,  'Decisão Dividida', 'Sean Vence',               3, 26, 27,  4, 1, NULL);
+INSERT INTO Luta VALUES (5,  'Decisão Unânime',  'Volkanovski Vence',        3, 22, 23,  5, 3, NULL);
+INSERT INTO Luta VALUES (6,  'Decisão Unânime',  'Justin Gaethje Vence',     3, 21, 18,  6, 3, NULL);
+INSERT INTO Luta VALUES (7,  'Finalização',      'Islam Makhachev Vence',    3, 13, 14,  7, 3, NULL);
+INSERT INTO Luta VALUES (8,  'Nocaute técnico',  'Topuria Vence',            5, 17, 20,  8, 3, NULL);
+INSERT INTO Luta VALUES (9,  'Nocaute',          'Topuria Vence',            5, 17, 23,  9, 3, NULL);
+INSERT INTO Luta VALUES (10, 'Nocaute técnico',  'Alex Pereira Vence',       5,  3,  6, 10, 3, NULL);
+INSERT INTO Luta VALUES (11, 'Decisão Unânime',  'Chimaev Vence',            5,  9, 10, 11, 3, NULL);
+INSERT INTO Luta VALUES (12, 'Finalização',      'Oliveira Vence',           5, 18, 20, 12, 3, NULL);
+INSERT INTO Luta VALUES (13, 'Decisão Unânime',  'Dricus Du Plessis Vence',  3, 10, 12, 13, 3, NULL);
+INSERT INTO Luta VALUES (14, 'Decisão Unânime',  'Imavov Vence',             3, 11, 12, 14, 3, NULL);
+INSERT INTO Luta VALUES (15, 'Decisão Unânime',  'Ian Garry Vence',          5, 15, 16, 15, 3, NULL);
+INSERT INTO Luta VALUES (16, 'Nocaute',          'Max Holloway Vence',       5, 19, 18, 16, 1, NULL);
+INSERT INTO Luta VALUES (17, 'Decisão Unânime',  'Topuria Vence',            3, 19, 17, 17, 3, NULL);
+INSERT INTO Luta VALUES (18, 'Decisão Unânime',  'Makhachev Vence',          5, 13, 23, 18, 3, NULL);
+INSERT INTO Luta VALUES (19, 'Finalização',      'Makhachev Vence',          5, 13, 32,  3, 3, NULL);
+INSERT INTO Luta VALUES (20, 'Nocaute técnico',  'Makhachev Vence',          5, 13, 23, 20, 3, NULL);
+INSERT INTO Luta VALUES (21, 'Decisão Unânime',  'Ankalaev Vence',           5,  3,  6, 21, 3, NULL);
+INSERT INTO Luta VALUES (22, 'Nocaute',          'Alex Pereira Vence',       5,  3,  8, 22, 3, NULL);
+INSERT INTO Luta VALUES (23, 'Nocaute',          'Tom Aspinall Vence',       3,  2,  4, 23, 2, NULL);
+INSERT INTO Luta VALUES (24, 'Finalização',      'Makhachev Vence',          5, 13, 20,  4, 3, NULL);
+INSERT INTO Luta VALUES (25, 'Decisão Dividida', 'Dricus Du Plessis Vence',  5, 10, 12, 25, 3, NULL);
+INSERT INTO Luta VALUES (26, 'Nocaute',          'Alex Pereira Vence',       5,  3,  8, 23, 3, NULL);
+INSERT INTO Luta VALUES (27, 'Decisão Unânime',  'Pavlovich Vence',          3,  1,  2, 27, 2, NULL);
+INSERT INTO Luta VALUES (28, 'Finalização',      'Merab Vence',              5, 28, 27, 28, 3, NULL);
+INSERT INTO Luta VALUES (29, 'Decisão Unânime',  'Merab Vence',              5, 28, 27, 29, 3, NULL);
+INSERT INTO Luta VALUES (30, 'Decisão Unânime',  'Gane Vence',               3,  1,  5, 30, 1, NULL);

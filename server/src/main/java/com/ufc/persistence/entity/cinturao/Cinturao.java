@@ -29,7 +29,7 @@ public class Cinturao {
     private Lutador lutador;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_divisao", nullable = false)
+    @JoinColumn(name = "id_divisao")
     private Divisao divisao;
 
     public Cinturao() {}

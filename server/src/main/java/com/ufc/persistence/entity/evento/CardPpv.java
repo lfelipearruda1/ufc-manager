@@ -9,13 +9,13 @@ import jakarta.persistence.Table;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "card_ppv")
+@Table(name = "Card_PPV")
 public class CardPpv {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_card_ppv")
-    private Long idCardPpv;
+    @Column(name = "id_card")
+    private Long idCard;
 
     @Column(name = "num_edicao", nullable = false)
     private Integer numEdicao;
@@ -44,11 +44,11 @@ public class CardPpv {
     public CardPpv() {}
 
     public Long getIdCardPpv() {
-        return idCardPpv;
+        return idCard;
     }
 
-    public void setIdCardPpv(Long idCardPpv) {
-        this.idCardPpv = idCardPpv;
+    public void setIdCard(Long idCard) {
+        this.idCard = idCard;
     }
 
     public Integer getNumEdicao() {
